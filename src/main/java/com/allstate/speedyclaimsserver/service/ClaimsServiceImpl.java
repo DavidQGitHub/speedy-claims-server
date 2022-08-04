@@ -35,18 +35,18 @@ public class ClaimsServiceImpl implements ClaimsService {
     }
 
     @Override
-    public List<Claims> getAllTransactionsForPolicyNumber(String policyNumber) {
-        return claimsRespository.findAllByPolicyNumber(policyNumber);
+    public List<Claims> getAllTransactionsForPolicynumber(Integer policynumber) {
+        return claimsRespository.findAllByPolicynumber(policynumber);
     }
 
     @Override
-    public Claims getTransactionByClaimId(Integer id) {
-        Optional<Claims> optionalCCT =  claimsRespository.findById(id);
+    public Claims getTransactionByClaimId(Integer claimid) {
+        Optional<Claims> optionalCCT =  claimsRespository.findById(claimid);
         if (optionalCCT.isPresent()) {
             return optionalCCT.get();
         }
-        logger.info("There is no transaction with an ID of " + id);
-        throw new TransactionNotFoundException("There is no transaction with an ID of " + id);
+        logger.info("There is no transaction with a claimid of " + claimid);
+        throw new TransactionNotFoundException("There is no transaction with a claimid of " + claimid);
     }
 
 

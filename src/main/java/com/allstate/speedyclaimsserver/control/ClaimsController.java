@@ -21,20 +21,20 @@ public class ClaimsController {
 
     @GetMapping()
     public List<Claims> getAll(@RequestParam(value="custlname", required=false) String custlname,
-                               @RequestParam(value="policynumber", required=false) String policynumber) {
+                               @RequestParam(value="policynumber", required=false) Integer policynumber) {
         if (custlname != null) {
             return claimsService.getAllTransactionsForCustlname(custlname);
         }
         else if (policynumber != null) {
-            return claimsService.getAllTransactionsForPolicyNumber(policynumber);
+            return claimsService.getAllTransactionsForPolicynumber(policynumber);
         }
 
         return claimsService.getAllTransactions();
 
     }
 
-    @GetMapping(value ="/{id}", produces={MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
-    public Claims getById(@PathVariable("id") Integer id) {
-        return claimsService.getTransactionByClaimId(id);
+    @GetMapping(value ="/{claimid}", produces={MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
+    public Claims getById(@PathVariable("claimid") Integer claimid) {
+        return claimsService.getTransactionByClaimId(claimid);
     }
 }

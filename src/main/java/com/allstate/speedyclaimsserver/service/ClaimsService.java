@@ -9,8 +9,8 @@ public interface ClaimsService {
     List<Claims> getAllTransactions();
     int countTransactions();
     List<Claims> getAllTransactionsForCustlname(String custlname);
-    List<Claims> getAllTransactionsForPolicyNumber(String policynumber);
-    Claims getTransactionByClaimId(Integer id);
+    List<Claims> getAllTransactionsForPolicynumber(Integer policynumber);
+    Claims getTransactionByClaimId(Integer claimid);
 
 //    Claims add(ClaimsDTO transaction);
 //    Claims updateTransaction(Integer id, Map<String,String> data);
