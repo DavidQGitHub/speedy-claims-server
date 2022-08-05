@@ -10,4 +10,5 @@ import java.util.List;
 public interface ClaimsRespository extends JpaRepository<Claims, Integer> {
     public List<Claims> findAllByCustlname(String custlname);
     public List<Claims> findAllByPolicynumber(Integer policynumber);
+    public List<Claims> findAllByStatus(String status);
 }
