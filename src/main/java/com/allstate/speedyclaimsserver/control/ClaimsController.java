@@ -36,7 +36,6 @@ public class ClaimsController {
         }
 
         return claimsService.getAllTransactions();
-
     }
 
     @GetMapping(value ="/{claimid}", produces={MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})

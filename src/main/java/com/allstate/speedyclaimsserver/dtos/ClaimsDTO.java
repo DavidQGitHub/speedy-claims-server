@@ -49,6 +49,7 @@ public class ClaimsDTO {
         this.claimanimaltype = newcl.getClaimanimaltype();
         this.claimanimalbreed = newcl.getClaimanimalbreed();
     }
+
     public Claims toClaims() {
 
         Claims newcl = new Claims(null, policynumber, status, insuretype, custfname, custlname, claimdate, claimamt, claimreason, claimdescr,
