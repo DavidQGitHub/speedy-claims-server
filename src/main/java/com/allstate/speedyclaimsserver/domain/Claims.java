@@ -2,6 +2,7 @@ package com.allstate.speedyclaimsserver.domain;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Objects;
 
 @Entity
 @Table(name="claims")
@@ -78,6 +79,19 @@ public class Claims {
                 ", claimanimaltype='" + claimanimaltype + '\'' +
                 ", claimanimalbreed='" + claimanimalbreed + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Claims claims = (Claims) o;
+        return claimid.equals(claims.claimid);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(claimid);
     }
 
     public Integer getClaimid() {
